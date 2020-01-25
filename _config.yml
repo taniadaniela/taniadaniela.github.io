@@ -20,12 +20,12 @@ plugins:
 - jekyll-remote-theme
 
 # Site settings
-url: 'https://mydomain.com'
+url: 'https://taniadaniela.github.io/'
 baseurl: ''
-title: 'My website'
-description: 'This is my new website'
+title: 'Tania Paiva'
+description: 'oh, is a website.. and is mine.'
 permalink: pretty
-logo: "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52"
+logo: "https://s.gravatar.com/avatar/ccb1fa9efb0178eddc5db29e3bb625b3?s=80"
 
 # Pagination
 paginate: 5

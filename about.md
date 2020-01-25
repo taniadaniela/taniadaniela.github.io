@@ -1,6 +1,10 @@
 ---
 layout: page
-title: About this website
+title: About me
 ---
 
-I'm not sure yet what this website is about, but I'm sure I'll work it out soon.
+Computer Science Enginner focused on Software Development.
+
+Using ruby, javascript and elixir to code cool things.
+
+Working remotely, not from a beach tho.

@@ -33,8 +33,6 @@ paginate_path: blog/page:num
 
 # Header nav
 navigation_header:
-- title: Home
-  url: /
 - title: About
   url: /about/
 - title: Blog

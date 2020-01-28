@@ -20,7 +20,7 @@ plugins:
 - jekyll-remote-theme
 
 # Site settings
-url: 'https://taniadaniela.github.io/'
+url: 'https://taniadaniela.github.io/blog'
 baseurl: ''
 title: 'Tania Paiva'
 description: 'oh, is a website.. and is mine.'

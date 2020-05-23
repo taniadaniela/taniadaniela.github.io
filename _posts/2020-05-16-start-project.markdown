@@ -3,6 +3,11 @@ layout: single
 title:  "Creating an app with Preact, Typescript and Parcel"
 date:   2020-05-16 15:28:54 -0300
 categories: development
+tags:
+  - js
+  - development
+  - nodejs
+---
 author: Tania Paiva
 ---
 

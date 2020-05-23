@@ -535,8 +535,8 @@ tr, td, th { vertical-align: middle; }
 .notice--danger ul:last-child { margin-bottom: 0; /* override*/ }
 
 /* ========================================================================== MASTHEAD ========================================================================== */
-.masthead { position: relative; border-bottom: 1px solid #f2f3f3; -webkit-animation: intro 0.3s both; animation: intro 0.3s both; -webkit-animation-delay: 0.15s; animation-delay: 0.15s; z-index: 20; }
-.masthead__inner-wrap { clear: both; margin-left: auto; margin-right: auto; padding: 1em; max-width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif; }
+.masthead { background-color: #0076be; position: relative; border-bottom: 1px solid #0076be; -webkit-animation: intro 0.3s both; animation: intro 0.3s both; -webkit-animation-delay: 0.15s; animation-delay: 0.15s; z-index: 20; }
+.masthead__inner-wrap { background-color: #0076be; clear: both; margin-left: auto; margin-right: auto; padding: 1em; max-width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif; }
 .masthead__inner-wrap::after { clear: both; content: ""; display: table; }
 @media (min-width: 80em) { .masthead__inner-wrap { max-width: 1280px; } }
 .masthead__inner-wrap nav { z-index: 10; }
@@ -588,17 +588,30 @@ tr, td, th { vertical-align: middle; }
 .page__content + .pagination, .page__meta + .pagination, .comment__date + .pagination, .page__share + .pagination, .page__comments + .pagination { margin-top: 2em; padding-top: 2em; border-top: 1px solid #f2f3f3; }
 
 /* Priority plus navigation ========================================================================== */
-.greedy-nav { position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; min-height: 2em; background: #fff; }
-.greedy-nav a { display: block; margin: 0 1rem; color: #6f777d; text-decoration: none; }
-.greedy-nav a:hover { color: #53595e; }
+.greedy-nav { position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; min-height: 2em; }
+.greedy-nav a { display: block; margin: 0 1rem; color: #fff; text-decoration: none; }
+.greedy-nav a:hover {
+  color: #95D8EB;
+}
 .greedy-nav a.site-logo { margin-left: 0; margin-right: 0.5rem; }
 .greedy-nav a.site-title { margin-left: 0; }
 .greedy-nav__toggle { -ms-flex-item-align: center; align-self: center; height: 2rem; border: 0; outline: none; background-color: transparent; cursor: pointer; }
 .greedy-nav .visible-links { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; -webkit-box-flex: 1; -ms-flex: 1; flex: 1; overflow: hidden; }
 .greedy-nav .visible-links li { -webkit-box-flex: 0; -ms-flex: none; flex: none; }
 .greedy-nav .visible-links a { position: relative; }
-.greedy-nav .visible-links a:before { content: ""; position: absolute; left: 0; bottom: 0; height: 4px; background: #6f777d; width: 100%; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; -webkit-transform: scaleX(0) translate3d(0, 0, 0); transform: scaleX(0) translate3d(0, 0, 0); }
-.greedy-nav .visible-links a:hover:before { -webkit-transform: scaleX(1); -ms-transform: scaleX(1); transform: scaleX(1); }
+.greedy-nav .visible-links a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background: #95D8EB;
+  width: 100%;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: scaleX(0) translate3d(0, 0, 0);
+  transform: scaleX(0) translate3d(0, 0, 0);
+}
 .greedy-nav .hidden-links { position: absolute; top: 100%; right: 0; margin-top: 15px; padding: 5px; border: 1px solid #f2f3f3; border-radius: 4px; background: #fff; -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 .greedy-nav .hidden-links.hidden { display: none; }
 .greedy-nav .hidden-links a { margin: 0; padding: 10px 20px; font-size: 1em; }
@@ -626,7 +639,7 @@ tr, td, th { vertical-align: middle; }
   .nav__list ul { margin-bottom: 1em; }
   .nav__list a { display: block; padding: 0.25em 0; } }
 @media (max-width: 63.9375em) and (min-width: 64em) { .nav__list a { padding-top: 0.125em; padding-bottom: 0.125em; } }
-@media (max-width: 63.9375em) { .nav__list a:hover { text-decoration: underline; } }
+@media (max-width: 63.9375em) { .nav__list a:hover { text-decoration: none; } }
 
 .nav__list .nav__items { margin: 0; font-size: 1.25rem; }
 .nav__list .nav__items a { color: inherit; }
@@ -674,8 +687,10 @@ tr, td, th { vertical-align: middle; }
 /* ========================================================================== SEARCH ========================================================================== */
 .layout--search .archive__item-teaser { margin-bottom: 0.25em; }
 
-.search__toggle { margin-left: 1rem; margin-right: 1rem; height: 2rem; border: 0; outline: none; color: #6f777d; background-color: transparent; cursor: pointer; -webkit-transition: 0.2s; transition: 0.2s; }
-.search__toggle:hover { color: #53595e; }
+.search__toggle { margin-left: 1rem; margin-right: 1rem; height: 2rem; border: 0; outline: none; color: #fff; background-color: transparent; cursor: pointer; -webkit-transition: 0.2s; transition: 0.2s; }
+.search__toggle:hover {
+  color: #95D8EB;
+}
 
 .search-icon { width: 100%; height: 100%; }
 
@@ -946,7 +961,10 @@ body { display: -webkit-box; display: -ms-flexbox; display: flex; min-height: 10
 .page .page__inner-wrap { float: left; margin-top: 1em; margin-left: 0; margin-right: 0; width: 100%; clear: both; }
 .page .page__inner-wrap .page__content, .page .page__inner-wrap .page__meta, .page .page__inner-wrap .comment__date, .page .page__inner-wrap .page__share { position: relative; float: left; margin-left: 0; margin-right: 0; width: 100%; clear: both; }
 
-.page__title { margin-top: 0; line-height: 1; }
+.page__title {
+  margin-top: 0;
+  line-height: 1;
+  color: #4DB4D7;}
 .page__title + .page__meta, .page__title + .comment__date { margin-top: -0.5em; }
 
 .page__lead { font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif; font-size: 1.25em; }

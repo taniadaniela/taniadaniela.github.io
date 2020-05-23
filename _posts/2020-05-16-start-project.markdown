@@ -37,7 +37,7 @@ Add parcel, preact and typescript to the dependencies:
 `npm i typescript@next preact parcel-bundler ts-loader --save`.
 
 Your `package.json` will look similar to this:  
-```
+```json
 {
   "name": "your_app",
   "version": "1.0.0",
@@ -63,9 +63,8 @@ Your `package.json` will look similar to this:
 The `package-lock.json` will get auto populated, don't edit it directly.
 
 #### Typescript config
-You will need a file to indicate typescript configuration:  
-```
-tsconfig.json
+You will need a tsconfig.json to indicate typescript configuration :  
+```json
 {
   "compilerOptions": {
     "outDir": "./dist",
@@ -84,9 +83,9 @@ This file indicates you have a `dist` folder for the compiled files and `src` fo
 
 
 #### Parcel config
-You will need a html entry point:
-```
-index.html
+You will need an index.html entry point:
+```html
+
 <!doctype html>
 <html lang="en">
 
@@ -108,7 +107,7 @@ index.html
 In this file the src for the script is the main file in your src folder, in my case `src/index.tsx`.
 
 And we need the parcel scripts to start and build our app, in `package.json` in the scripts section add:
-```
+```json
 "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
@@ -116,9 +115,8 @@ And we need the parcel scripts to start and build our app, in `package.json` in 
 ```
 
 #### Sample files
-We need a HelloWorld component:
-```
-src/HelloWorld.tsx
+We need a HelloWorld component, src/HelloWorld.tsx:
+```js
 import { h, Component } from 'preact';
 
 export interface HelloWorldProps {
@@ -131,9 +129,8 @@ export default class HelloWorld extends Component<HelloWorldProps, any> {
   }
 }
 ```
-And we'll use that in our main file:
-```
-src/index.tsx
+And we'll use that in our src/index.tsx main file:
+```js
 import { h, render } from 'preact';
 //import './styles.scss'; //if you have styles
 import HelloWorld from './HelloWorld';

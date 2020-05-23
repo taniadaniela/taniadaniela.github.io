@@ -133,7 +133,7 @@ contain the dependencies.</p>
 <code class="highlighter-rouge">npm i typescript@next preact parcel-bundler ts-loader --save</code>.</p>
 
 <p>Your <code class="highlighter-rouge">package.json</code> will look similar to this:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your_app"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -159,28 +159,27 @@ contain the dependencies.</p>
 <p>The <code class="highlighter-rouge">package-lock.json</code> will get auto populated, don’t edit it directly.</p>
 
 <h4 id="typescript-config">Typescript config</h4>
-<p>You will need a file to indicate typescript configuration:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>tsconfig.json
-{
-  "compilerOptions": {
-    "outDir": "./dist",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "es6",
-    "moduleResolution": "node",
-    "target": "es6",
-    "jsx": "react",
-    "jsxFactory": "h"
-  },
-  "include": ["./src/**/*"]
-}
-</code></pre>
+<p>You will need a tsconfig.json to indicate typescript configuration :</p>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"outDir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./dist"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"noImplicitAny"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es6"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"moduleResolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es6"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"jsx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"jsxFactory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"./src/**/*"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 <p>This file indicates you have a <code class="highlighter-rouge">dist</code> folder for the compiled files and <code class="highlighter-rouge">src</code> folder for the source files, so don’t forget to create those folders (or use the names you like).</p>
 
 <h4 id="parcel-config">Parcel config</h4>
-<p>You will need a html entry point:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>index.html
+<p>You will need an index.html entry point:</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
 <span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 
@@ -203,36 +202,34 @@ contain the dependencies.</p>
 <p>In this file the src for the script is the main file in your src folder, in my case <code class="highlighter-rouge">src/index.tsx</code>.</p>
 
 <p>And we need the parcel scripts to start and build our app, in <code class="highlighter-rouge">package.json</code> in the scripts section add:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>"scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
-  },
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parcel index.html"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parcel build index.html"</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre>
 </div>
 
 <h4 id="sample-files">Sample files</h4>
-<p>We need a HelloWorld component:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>src/HelloWorld.tsx
-import { h, Component } from 'preact';
+<p>We need a HelloWorld component, src/HelloWorld.tsx:</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">h</span><span class="p">,</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'preact'</span><span class="p">;</span>
 
-export interface HelloWorldProps {
-  name: string
-}
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">HelloWorldProps</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span>
+<span class="p">}</span>
 
-export default class HelloWorld extends Component&lt;HelloWorldProps, any&gt; {
-  render(props) {
-    return &lt;p&gt;Hello {props.name}!&lt;/p&gt;
-  }
-}
+<span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">HelloWorld</span> <span class="kr">extends</span> <span class="nx">Component</span><span class="o">&lt;</span><span class="nx">HelloWorldProps</span><span class="p">,</span> <span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">!&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
-<p>And we’ll use that in our main file:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>src/index.tsx
-import { h, render } from 'preact';
-//import './styles.scss'; //if you have styles
-import HelloWorld from './HelloWorld';
+<p>And we’ll use that in our src/index.tsx main file:</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">h</span><span class="p">,</span> <span class="nx">render</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'preact'</span><span class="p">;</span>
+<span class="c1">//import './styles.scss'; //if you have styles</span>
+<span class="kr">import</span> <span class="nx">HelloWorld</span> <span class="nx">from</span> <span class="s1">'./HelloWorld'</span><span class="p">;</span>
 
-render(&lt;HelloWorld name="world" /&gt;, document.querySelector('#root'));
+<span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">HelloWorld</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"world"</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#root'</span><span class="p">));</span>
 </code></pre>
 </div>
 

@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "Creating an app with Preact, Typescript and Parcel"
 date:   2020-05-16 15:28:54 -0300
 categories: development

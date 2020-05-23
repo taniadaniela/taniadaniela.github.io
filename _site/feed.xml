@@ -1,4 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-25T22:40:52-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">TaniaPaiva</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Tania Paiva</name></author><entry><title type="html">How I end up “reading” more</title><link href="http://localhost:4000/books/reading/" rel="alternate" type="text/html" title="How I end up &quot;reading&quot; more" /><published>2020-02-24T15:28:54-03:00</published><updated>2020-02-24T15:28:54-03:00</updated><id>http://localhost:4000/books/reading</id><content type="html" xml:base="http://localhost:4000/books/reading/">&lt;p&gt;One of my goals for 2019 was to read more, my idea was to read at least one book per month. I failed at this goal, and honestly I failed fantastically, because I started to read 5 books, and I couldn’t finished a single one. My reading list of articles increased daily but I was not able to make it go down.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-23T12:38:04-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">TaniaPaiva</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Tania Paiva</name></author><entry><title type="html">Creating an app with Preact, Typescript and Parcel</title><link href="http://localhost:4000/development/start-project/" rel="alternate" type="text/html" title="Creating an app with Preact, Typescript and Parcel" /><published>2020-05-16T14:28:54-04:00</published><updated>2020-05-16T14:28:54-04:00</updated><id>http://localhost:4000/development/start-project</id><content type="html" xml:base="http://localhost:4000/development/start-project/">&lt;p&gt;If you have been coding in the JS ecosystem for a while you’re probably familiar
+with Webpack and React, but this post is not about them :troll:
+Instead this post is about creating an app with &lt;a href=&quot;https://preactjs.com/&quot;&gt;Preact&lt;/a&gt;,
+&lt;a href=&quot;https://www.typescriptlang.org/&quot;&gt;Typescript&lt;/a&gt; and &lt;a href=&quot;https://parceljs.org/&quot;&gt;Parcel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;but-why&quot;&gt;But, why?&lt;/h3&gt;
+&lt;p&gt;Good question, the reason because I’ve chosen these tools is because I wanted a lightweight
+app without too much configuration (that’s why Parcel and Preact) and I wanted to dive into
+the static checking and typing world that Typescript provides. And plus to those reasons I’m
+a developer, I like trying new technologies and having an opinion with a background to
+support it.&lt;/p&gt;
+
+&lt;h3 id=&quot;lets-get-into-the-technology&quot;&gt;Let’s get into the technology&lt;/h3&gt;
+&lt;p&gt;First we need nodeJS, I like to use &lt;a href=&quot;https://github.com/asdf-vm/asdf&quot;&gt;asdf version manager&lt;/a&gt;.&lt;br /&gt;
+Install &lt;a href=&quot;https://github.com/asdf-vm/asdf-nodejs.git&quot;&gt;asdf nodeJS plugin&lt;/a&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;asdf plugin-add nodejs&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we can go ahead and create the app folder:&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkdir your_app&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd your_app&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm init&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm init&lt;/code&gt; we’ll get two important files, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package-lock.json&lt;/code&gt;. These files will
+contain the dependencies.&lt;/p&gt;
+
+&lt;p&gt;Add parcel, preact and typescript to the dependencies: &lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm i typescript@next preact parcel-bundler ts-loader --save&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; will look similar to this:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  &quot;name&quot;: &quot;your_app&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;y&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;&quot;,
+    &quot;build&quot;: &quot;&quot;
+  },
+  &quot;author&quot;: &quot;you&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;preact&quot;: &quot;^10.4.1&quot;,
+    &quot;ts-loader&quot;: &quot;^7.0.4&quot;,
+    &quot;typescript&quot;: &quot;^4.0.0-dev.20200514&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;parcel-bundler&quot;: &quot;^1.12.4&quot;,
+    &quot;sass&quot;: &quot;^1.26.5&quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package-lock.json&lt;/code&gt; will get auto populated, don’t edit it directly.&lt;/p&gt;
+
+&lt;h4 id=&quot;typescript-config&quot;&gt;Typescript config&lt;/h4&gt;
+&lt;p&gt;You will need a file to indicate typescript configuration:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tsconfig.json
+{
+  &quot;compilerOptions&quot;: {
+    &quot;outDir&quot;: &quot;./dist&quot;,
+    &quot;sourceMap&quot;: true,
+    &quot;noImplicitAny&quot;: true,
+    &quot;module&quot;: &quot;es6&quot;,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;target&quot;: &quot;es6&quot;,
+    &quot;jsx&quot;: &quot;react&quot;,
+    &quot;jsxFactory&quot;: &quot;h&quot;
+  },
+  &quot;include&quot;: [&quot;./src/**/*&quot;]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This file indicates you have a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dist&lt;/code&gt; folder for the compiled files and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src&lt;/code&gt; folder for the source files, so don’t forget to create those folders (or use the names you like).&lt;/p&gt;
+
+&lt;h4 id=&quot;parcel-config&quot;&gt;Parcel config&lt;/h4&gt;
+&lt;p&gt;You will need a html entry point:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;index.html
+&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&quot;en&quot;&amp;gt;
+
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;viewport&quot;
+      content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&amp;gt;
+    &amp;lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&amp;gt;
+    &amp;lt;title&amp;gt;Your App Name&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+
+  &amp;lt;body&amp;gt;
+    &amp;lt;div id=&quot;root&quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;script src=&quot;src/index.tsx&quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;/body&amp;gt;
+
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In this file the src for the script is the main file in your src folder, in my case &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src/index.tsx&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;And we need the parcel scripts to start and build our app, in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; in the scripts section add:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;parcel index.html&quot;,
+    &quot;build&quot;: &quot;parcel build index.html&quot;
+  },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;sample-files&quot;&gt;Sample files&lt;/h4&gt;
+&lt;p&gt;We need a HelloWorld component:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;src/HelloWorld.tsx
+import { h, Component } from 'preact';
+
+export interface HelloWorldProps {
+  name: string
+}
+
+export default class HelloWorld extends Component&amp;lt;HelloWorldProps, any&amp;gt; {
+  render(props) {
+    return &amp;lt;p&amp;gt;Hello {props.name}!&amp;lt;/p&amp;gt;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And we’ll use that in our main file:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;src/index.tsx
+import { h, render } from 'preact';
+//import './styles.scss'; //if you have styles
+import HelloWorld from './HelloWorld';
+
+render(&amp;lt;HelloWorld name=&quot;world&quot; /&amp;gt;, document.querySelector('#root'));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we are ready to hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm start&lt;/code&gt; and have our app displayed on the browser.&lt;/p&gt;</content><author><name>Tania Paiva</name></author><summary type="html">If you have been coding in the JS ecosystem for a while you’re probably familiar with Webpack and React, but this post is not about them :troll: Instead this post is about creating an app with Preact, Typescript and Parcel.</summary></entry><entry><title type="html">How I end up “reading” more</title><link href="http://localhost:4000/books/reading/" rel="alternate" type="text/html" title="How I end up &quot;reading&quot; more" /><published>2020-02-24T15:28:54-03:00</published><updated>2020-02-24T15:28:54-03:00</updated><id>http://localhost:4000/books/reading</id><content type="html" xml:base="http://localhost:4000/books/reading/">&lt;p&gt;One of my goals for 2019 was to read more, my idea was to read at least one book per month. I failed at this goal, and honestly I failed fantastically, because I started to read 5 books, and I couldn’t finished a single one. My reading list of articles increased daily but I was not able to make it go down.&lt;/p&gt;
 
 &lt;p&gt;The reasons because I failed in this goal are distractions and tiredness. By the end of a work day, my brain was really tired to dedicate another hour for reading, and during the day when having some free time I ended up spending those minutes in social networks. Yeah, as I said I failed fantastically.&lt;/p&gt;
 

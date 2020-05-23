@@ -8,8 +8,6 @@ tags:
   - development
   - nodejs
 ---
-author: Tania Paiva
----
 
 If you have been coding in the JS ecosystem for a while you're probably familiar
 with Webpack and React, but this post is not about them :troll:

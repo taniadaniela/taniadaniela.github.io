@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-23T18:35:44-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">TaniaPaiva</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Tania Paiva</name></author><entry><title type="html">Creating an app with Preact, Typescript and Parcel</title><link href="http://localhost:4000/development/start-project/" rel="alternate" type="text/html" title="Creating an app with Preact, Typescript and Parcel" /><published>2020-05-16T14:28:54-04:00</published><updated>2020-05-16T14:28:54-04:00</updated><id>http://localhost:4000/development/start-project</id><content type="html" xml:base="http://localhost:4000/development/start-project/">&lt;p&gt;If you have been coding in the JS ecosystem for a while you’re probably familiar
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-23T19:21:23-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tania Paiva</title><subtitle>My personal site with stuff I enjoy and learn everyday.</subtitle><author><name>Tania Paiva</name><email>taniadaniela1803@mail.com</email></author><entry><title type="html">Creating an app with Preact, Typescript and Parcel</title><link href="http://localhost:4000/development/start-project/" rel="alternate" type="text/html" title="Creating an app with Preact, Typescript and Parcel" /><published>2020-05-16T14:28:54-04:00</published><updated>2020-05-16T14:28:54-04:00</updated><id>http://localhost:4000/development/start-project</id><content type="html" xml:base="http://localhost:4000/development/start-project/">&lt;p&gt;If you have been coding in the JS ecosystem for a while you’re probably familiar
 with Webpack and React, but this post is not about them :troll:
 Instead this post is about creating an app with &lt;a href=&quot;https://preactjs.com/&quot;&gt;Preact&lt;/a&gt;,
 &lt;a href=&quot;https://www.typescriptlang.org/&quot;&gt;Typescript&lt;/a&gt; and &lt;a href=&quot;https://parceljs.org/&quot;&gt;Parcel&lt;/a&gt;.&lt;/p&gt;
@@ -12,47 +12,48 @@ support it.&lt;/p&gt;
 
 &lt;h3 id=&quot;lets-get-into-the-technology&quot;&gt;Let’s get into the technology&lt;/h3&gt;
 &lt;p&gt;First we need nodeJS, I like to use &lt;a href=&quot;https://github.com/asdf-vm/asdf&quot;&gt;asdf version manager&lt;/a&gt;.&lt;br /&gt;
-Install &lt;a href=&quot;https://github.com/asdf-vm/asdf-nodejs.git&quot;&gt;asdf nodeJS plugin&lt;/a&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;asdf plugin-add nodejs&lt;/code&gt;&lt;/p&gt;
+Install &lt;a href=&quot;https://github.com/asdf-vm/asdf-nodejs.git&quot;&gt;asdf nodeJS plugin&lt;/a&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;asdf plugin-add nodejs&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Now we can go ahead and create the app folder:&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkdir your_app&lt;/code&gt;&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd your_app&lt;/code&gt;&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm init&lt;/code&gt;&lt;/p&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir your_app&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cd your_app&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm init&lt;/code&gt; we’ll get two important files, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package-lock.json&lt;/code&gt;. These files will
+&lt;p&gt;With &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt; we’ll get two important files, &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;package-lock.json&lt;/code&gt;. These files will
 contain the dependencies.&lt;/p&gt;
 
 &lt;p&gt;Add parcel, preact and typescript to the dependencies: &lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm i typescript@next preact parcel-bundler ts-loader --save&lt;/code&gt;.&lt;/p&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i typescript@next preact parcel-bundler ts-loader --save&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; will look similar to this:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
-  &quot;name&quot;: &quot;your_app&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;&quot;,
-  &quot;main&quot;: &quot;y&quot;,
-  &quot;scripts&quot;: {
-    &quot;start&quot;: &quot;&quot;,
-    &quot;build&quot;: &quot;&quot;
-  },
-  &quot;author&quot;: &quot;you&quot;,
-  &quot;license&quot;: &quot;ISC&quot;,
-  &quot;dependencies&quot;: {
-    &quot;preact&quot;: &quot;^10.4.1&quot;,
-    &quot;ts-loader&quot;: &quot;^7.0.4&quot;,
-    &quot;typescript&quot;: &quot;^4.0.0-dev.20200514&quot;
-  },
-  &quot;devDependencies&quot;: {
-    &quot;parcel-bundler&quot;: &quot;^1.12.4&quot;,
-    &quot;sass&quot;: &quot;^1.26.5&quot;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package-lock.json&lt;/code&gt; will get auto populated, don’t edit it directly.&lt;/p&gt;
+&lt;p&gt;Your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; will look similar to this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;your_app&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;y&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;you&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;license&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ISC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;preact&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^10.4.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;ts-loader&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^7.0.4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;typescript&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^4.0.0-dev.20200514&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;devDependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;parcel-bundler&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^1.12.4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^1.26.5&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;package-lock.json&lt;/code&gt; will get auto populated, don’t edit it directly.&lt;/p&gt;
 
 &lt;h4 id=&quot;typescript-config&quot;&gt;Typescript config&lt;/h4&gt;
 &lt;p&gt;You will need a file to indicate typescript configuration:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tsconfig.json
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tsconfig.json
 {
   &quot;compilerOptions&quot;: {
     &quot;outDir&quot;: &quot;./dist&quot;,
@@ -66,42 +67,45 @@ contain the dependencies.&lt;/p&gt;
   },
   &quot;include&quot;: [&quot;./src/**/*&quot;]
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;This file indicates you have a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dist&lt;/code&gt; folder for the compiled files and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src&lt;/code&gt; folder for the source files, so don’t forget to create those folders (or use the names you like).&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;This file indicates you have a &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt; folder for the compiled files and &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; folder for the source files, so don’t forget to create those folders (or use the names you like).&lt;/p&gt;
 
 &lt;h4 id=&quot;parcel-config&quot;&gt;Parcel config&lt;/h4&gt;
 &lt;p&gt;You will need a html entry point:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;index.html
-&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang=&quot;en&quot;&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;index.html
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 
-  &amp;lt;head&amp;gt;
-    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;
-    &amp;lt;meta name=&quot;viewport&quot;
-      content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&amp;gt;
-    &amp;lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&amp;gt;
-    &amp;lt;title&amp;gt;Your App Name&amp;lt;/title&amp;gt;
-  &amp;lt;/head&amp;gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ie=edge&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Your App Name&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
 
-  &amp;lt;body&amp;gt;
-    &amp;lt;div id=&quot;root&quot;&amp;gt;&amp;lt;/div&amp;gt;
-    &amp;lt;script src=&quot;src/index.tsx&quot;&amp;gt;&amp;lt;/script&amp;gt;
-  &amp;lt;/body&amp;gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;root&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;src/index.tsx&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;In this file the src for the script is the main file in your src folder, in my case &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src/index.tsx&lt;/code&gt;.&lt;/p&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;In this file the src for the script is the main file in your src folder, in my case &lt;code class=&quot;highlighter-rouge&quot;&gt;src/index.tsx&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;And we need the parcel scripts to start and build our app, in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; in the scripts section add:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
+&lt;p&gt;And we need the parcel scripts to start and build our app, in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; in the scripts section add:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
     &quot;start&quot;: &quot;parcel index.html&quot;,
     &quot;build&quot;: &quot;parcel build index.html&quot;
   },
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h4 id=&quot;sample-files&quot;&gt;Sample files&lt;/h4&gt;
 &lt;p&gt;We need a HelloWorld component:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;src/HelloWorld.tsx
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;src/HelloWorld.tsx
 import { h, Component } from 'preact';
 
 export interface HelloWorldProps {
@@ -113,17 +117,19 @@ export default class HelloWorld extends Component&amp;lt;HelloWorldProps, any&am
     return &amp;lt;p&amp;gt;Hello {props.name}!&amp;lt;/p&amp;gt;
   }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;And we’ll use that in our main file:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;src/index.tsx
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;src/index.tsx
 import { h, render } from 'preact';
 //import './styles.scss'; //if you have styles
 import HelloWorld from './HelloWorld';
 
 render(&amp;lt;HelloWorld name=&quot;world&quot; /&amp;gt;, document.querySelector('#root'));
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Now we are ready to hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm start&lt;/code&gt; and have our app displayed on the browser.&lt;/p&gt;</content><author><name>Tania Paiva</name></author><category term="js" /><category term="development" /><category term="nodejs" /><summary type="html">If you have been coding in the JS ecosystem for a while you’re probably familiar with Webpack and React, but this post is not about them :troll: Instead this post is about creating an app with Preact, Typescript and Parcel.</summary></entry><entry><title type="html">How I end up “reading” more</title><link href="http://localhost:4000/books/reading/" rel="alternate" type="text/html" title="How I end up &quot;reading&quot; more" /><published>2020-02-24T15:28:54-03:00</published><updated>2020-02-24T15:28:54-03:00</updated><id>http://localhost:4000/books/reading</id><content type="html" xml:base="http://localhost:4000/books/reading/">&lt;p&gt;One of my goals for 2019 was to read more, my idea was to read at least one book per month. I failed at this goal, and honestly I failed fantastically, because I started to read 5 books, and I couldn’t finished a single one. My reading list of articles increased daily but I was not able to make it go down.&lt;/p&gt;
+&lt;p&gt;Now we are ready to hit &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; and have our app displayed on the browser.&lt;/p&gt;</content><author><name>Tania Paiva</name><email>taniadaniela1803@mail.com</email></author><category term="js" /><category term="development" /><category term="nodejs" /><summary type="html">If you have been coding in the JS ecosystem for a while you’re probably familiar with Webpack and React, but this post is not about them :troll: Instead this post is about creating an app with Preact, Typescript and Parcel.</summary></entry><entry><title type="html">How I end up “reading” more</title><link href="http://localhost:4000/books/reading/" rel="alternate" type="text/html" title="How I end up &quot;reading&quot; more" /><published>2020-02-24T15:28:54-03:00</published><updated>2020-02-24T15:28:54-03:00</updated><id>http://localhost:4000/books/reading</id><content type="html" xml:base="http://localhost:4000/books/reading/">&lt;p&gt;One of my goals for 2019 was to read more, my idea was to read at least one book per month. I failed at this goal, and honestly I failed fantastically, because I started to read 5 books, and I couldn’t finished a single one. My reading list of articles increased daily but I was not able to make it go down.&lt;/p&gt;
 
 &lt;p&gt;The reasons because I failed in this goal are distractions and tiredness. By the end of a work day, my brain was really tired to dedicate another hour for reading, and during the day when having some free time I ended up spending those minutes in social networks. Yeah, as I said I failed fantastically.&lt;/p&gt;
 
@@ -136,4 +142,4 @@ render(&amp;lt;HelloWorld name=&quot;world&quot; /&amp;gt;, document.querySelect
 
 &lt;p&gt;So, in just a week, I have listened to 8 articles of my pocket list and I have listened to 2 chapters of one of my books in the kindle, all this happened while I was washing the dishes and cleaning my apartment.&lt;/p&gt;
 
-&lt;p&gt;I end up using all the tools I already have but in a little different way.&lt;/p&gt;</content><author><name>Tania Paiva</name></author><category term="reading" /><category term="pocket" /><category term="kindle" /><summary type="html">One of my goals for 2019 was to read more, my idea was to read at least one book per month. I failed at this goal, and honestly I failed fantastically, because I started to read 5 books, and I couldn’t finished a single one. My reading list of articles increased daily but I was not able to make it go down.</summary></entry></feed>
+&lt;p&gt;I end up using all the tools I already have but in a little different way.&lt;/p&gt;</content><author><name>Tania Paiva</name><email>taniadaniela1803@mail.com</email></author><category term="reading" /><category term="pocket" /><category term="kindle" /><summary type="html">One of my goals for 2019 was to read more, my idea was to read at least one book per month. I failed at this goal, and honestly I failed fantastically, because I started to read 5 books, and I couldn’t finished a single one. My reading list of articles increased daily but I was not able to make it go down.</summary></entry></feed>

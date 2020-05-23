@@ -84,8 +84,7 @@ This file indicates you have a `dist` folder for the compiled files and `src` fo
 
 #### Parcel config
 You will need an index.html entry point:
-```html
-
+```
 <!doctype html>
 <html lang="en">
 

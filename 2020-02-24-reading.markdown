@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "How I end up \"reading\" more"
 date:   2020-02-24 15:28:54 -0300
 categories: books
